@@ -1,5 +1,8 @@
 <?php
 
+include("functions/best_rush.php");
+include("functions/latest.php");
+
 function getMapInfo($url){
 	$url="http://maps.oc.tc/".$url."/map.xml";
 	$xml=new SimpleXMLElement($url,NULL,true);
@@ -22,11 +25,6 @@ function getMapInfo($url){
 	}
 	$arr=array("MapName"=>$mapName,"MapVersion"=>$mapVersion,"MapAuthors"=>$mapAuthors,"MapTeams"=>$mapTeams);
 	return $arr;
-}
-
-function bestRush(){
-	include("connect.php");
-	include("disconnect.php");
 }
 
 ?>
